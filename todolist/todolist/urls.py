@@ -24,7 +24,6 @@ from tasksapi.views import (
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/tasks/', TasksAPIView.as_view()),
-    path('api/tasks/?start_date=&end_date=', TasksDateAPIView.as_view()),
     path('api/tasks/<int:task_id>/', TasksDetailAPIView.as_view()),
     path('api/tasks/to-do/', TasksToDoAPIView.as_view()),
     path('api/tasks/expired/', TasksExpiredAPIView.as_view()),
