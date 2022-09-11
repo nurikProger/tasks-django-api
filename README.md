@@ -6,7 +6,7 @@ How to use:
 2) Copy the url address of the local server and paste it to your browser's searchbar
 3) Add one of these to the url:
   api/tasks/
-  api/tasks/?start_date=&end_date= (use "%20" for a space between the date and the time. For example, "2022-12-23%2012:30" = "2022-12-23 12:30")
+  api/tasks/?start_date=&end_date= (use "%20" for a space between the date and the time. For example, "2022-12-23%2012:30:23" = "2022-12-23 12:30:23")
   api/tasks/:id/
   api/tasks/to-do/
   api/tasks/expired/
