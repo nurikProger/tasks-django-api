@@ -5,6 +5,7 @@ from .models import Tasks
 from .serializers import TasksSerializer
 from datetime import datetime
 from pytz import timezone
+from django.utils.datastructures import MultiValueDictKeyError
 
 
 class TasksAPIView(APIView):
@@ -12,8 +13,15 @@ class TasksAPIView(APIView):
 
     # List
     def get(self, request):
-        start_time = request.GET['start_date']
-        end_time = request.GET['end_date']
+        try:
+            start_time = request.GET['start_date']
+        except MultiValueDictKeyError:
+            start_time = ""
+            
+        try:
+            end_time = request.GET['end_date']
+        except MultiValueDictKeyError:
+            end_time = ""
         
         # No Parameters
         if len(start_time) == 0 and len(end_time) == 0:
